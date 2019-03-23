@@ -28,7 +28,7 @@ The script could be easily altered to take advantage of a better masscan if used
 I used a lot of hardcoded bash commands in the script so I could learn more about CLI utilities such as awk, cut, sed, head, tr, etc. I'm sure the string slicing methods available in Python could be leveraged to change the output as well, I just preferred to learn some bash-friendly commands. If you're not a fan of the hardcoded commands or the output format, change it up!
 
 ### Multi-Processing
-The script takes advantage of multi-processing by running a bunch of the commands simultaenously, this greatly reduces the scanning time. My original script, which performed all the commands in a linear fashion finished a test box in ~6 minutes, while this multi-processing version finished the same box in ~2 minutes flat. 
+The script takes advantage of multi-processing by running a bunch of the commands simultaenously, this greatly reduces the scanning time. My original script, which performed all the commands in a linear fashion finished a test box in ~6 minutes, while this multi-processing version finished the same box in ~2 minutes flat. Maybe this script is better suited for multi-threading? I'm not sure, I did some reading on the topic of I/O-bound vs. CPU-bound programs but was unable to devote much time to it. Let me know if you know the answer and I'll come back to it at some point.
 
 ### Argument Parsing
 This is the part I'm most ashamed of, the CLI-argument parsing seems very clumsy haha. Feel free to tell me how to do it better. I'm very new to this. 
