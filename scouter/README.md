@@ -10,7 +10,7 @@ At a high-level the script does the following:
 4. Runs a top 100 ports `nmap -sU --top-ports 100 <target IP>` scan
 5. If there are any UDP ports discovered, the script will run a follow-up `nmap -sU -sC -sV` scan on those ports
 
-For maximum ownage, add this entry to your .bashrc file: `alias scouter='python /root/filepath/scouter.py'` and you can just call the script with 'scouter <ip> <interface>.'
+For maximum ownage, add this entry to your .bashrc file: `alias scouter='python /root/filepath/scouter.py'` and you can just call the script with 'scouter <<ip>> <<interface>>.'
 
 
 ## Details and Weird Discoveries
