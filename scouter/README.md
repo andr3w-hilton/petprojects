@@ -23,13 +23,15 @@ The **weirdest** thing I discovered, was that if you run a UDP all-ports scan wi
 The script could be easily altered to take advantage of a better masscan if used outside of the hackthebox environment. Have fun altering it to suit your needs.
 
 ### Hardcoded Bash Commands
-I used a lot of hardcoded bash commands in the script so I could learn more about bash utilities such as awk, cut, sed, head, tr, etc. I'm sure the string slicing methods available in Python could be leveraged to change the output as well, I just preferred to learn some bash commands. If you're not a fan of the hardcoded commands or the output format, change it up!
+I used a lot of hardcoded bash commands in the script so I could learn more about CLI utilities such as awk, cut, sed, head, tr, etc. I'm sure the string slicing methods available in Python could be leveraged to change the output as well, I just preferred to learn some bash commands. If you're not a fan of the hardcoded commands or the output format, change it up!
 
 ### Multi-Processing
 The script takes advantage of multi-processing by running a bunch of the commands simultaenously, this greatly reduces the scanning time. My original script, which performed all the commands in a linear fashion finished a test box in ~6 minutes, while this multi-processing version finished the same box in ~2 minutes flat. 
 
 ### Argument Parsing
 This is the part I'm most ashamed of, the CLI-argument parsing seems very clumsy haha. Feel free to tell me how to do it better. I'm very new to this. 
+
+### Thanks to dirsearch.py for the color scheme inspiration! (shamlessly just ripped it off)
 
 HMU on twitter @h0mbre_ if you get anything out of it! 
 
