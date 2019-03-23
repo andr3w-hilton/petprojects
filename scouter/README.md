@@ -1,6 +1,6 @@
 # Scouter
 
-Scouter is the result of me trying to speed up and automate my hackthebox.eu initial scanning work-flow. I am very new to scripting/writing code so I thought it would be a good learning opportunity. **Please keep in mind that it is optimized specifically for the hackthebox VPN environment.** If you want to know more about the quirks associated with scanning in the hackthebox VPN I discovered, read the Details section below. 
+Scouter is the result of me trying to speed up and automate my hackthebox.eu initial scanning work-flow. I am very new to scripting/writing code so I thought it would be a good learning opportunity. **Please keep in mind that it is optimized specifically for the hackthebox VPN environment.** If you want to know more about the quirks associated with scanning in the hackthebox VPN I discovered, read the Details section below. When a box drops, you could get a couple minutes ahead of the crowd
 
 At a high-level the script does the following:
 1. Does the standard `nmap -sC -sV <target IP>` scan
@@ -20,6 +20,19 @@ I also found that masscan likes to hang. It will display a counter telling you w
 ###### WTF?
 The **weirdest** thing I discovered, was that if you run a UDP all-ports scan with masscan and simultaneously run an `nmap -sU` scan of any sort, the nmap results will be lightning quick. **This greatly reduces our scanning times.** To take advantage of this potential boost, I added a function called 'turbo' which will run a `masscan -pU:1-65535 -e tun0 --rate=200 <target IP>` scan and direct both stderr and stdout to /dev/null since we don't need the output (remember, it doesn't catch open ports). All we need it to do is run to get our nmap turbo boost.
 
-The script could be easily altered to take advantage of a better masscan if used outside of the hackthebox environment. Please keep in 
+The script could be easily altered to take advantage of a better masscan if used outside of the hackthebox environment. Have fun altering it to suit your needs.
+
+### Hardcoded Bash Commands
+I used a lot of hardcoded bash commands in the script so I could learn more about bash utilities such as awk, cut, sed, head, tr, etc. I'm sure the string slicing methods available in Python could be leveraged to change the output as well, I just preferred to learn some bash commands. If you're not a fan of the hardcoded commands or the output format, change it up!
+
+### Multi-Processing
+The script takes advantage of multi-processing by running a bunch of the commands simultaenously, this greatly reduces the scanning time. My original script, which performed all the commands in a linear fashion finished a test box in ~6 minutes, while this multi-processing version finished the same box in ~2 minutes flat. 
+
+### Argument Parsing
+This is the part I'm most ashamed of, the CLI-argument parsing seems very clumsy haha. Feel free to tell me how to do it better. I'm very new to this. 
+
+HMU on twitter @h0mbre_ if you get anything out of it! 
+
+
 
 
