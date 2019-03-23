@@ -4,7 +4,7 @@
 Scouter is the result of me trying to speed up and automate my hackthebox.eu initial scanning work-flow. I am very new to scripting/writing python code so I thought it would be a good learning opportunity. **Please keep in mind that it is optimized specifically for the hackthebox VPN environment.** If you want to know more about the quirks associated with scanning in the hackthebox VPN I discovered, read the Details section below.
 
 At a high-level the script does the following:
-1. Takes an IP address + Interface: Example: scouter.py 10.10.10.10 eth0 (the default interface is tun0 if you leave it blank)
+1. Takes an IP address + Interface: Example: `scouter.py 10.10.10.10 eth0` (the default interface is tun0 if you leave it blank)
 2. Does the standard `nmap -sC -sV <target IP>` scan
 3. Runs a masscan all tcp ports scan on non-default nmap tcp ports (~64535 ports)
 4. If there are any results outside of the default nmap port range, the script will run a follow-up `nmap -sC -sV` scan on those ports
