@@ -1,6 +1,6 @@
 # Scouter
 
-Scouter is the result of me trying to speed up and automate my hackthebox.eu initial scanning work-flow. I am very new to scripting/writing code so I thought it would be a good learning opportunity. **Please keep in mind that it is optimized specifically for the hackthebox VPN environment.** If you want to know more about the quirks associated with scanning in the hackthebox VPN I discovered, read the Details section below. When a box drops, you could get a couple minutes ahead of the crowd
+Scouter is the result of me trying to speed up and automate my hackthebox.eu initial scanning work-flow. I am very new to scripting/writing python code so I thought it would be a good learning opportunity. **Please keep in mind that it is optimized specifically for the hackthebox VPN environment.** If you want to know more about the quirks associated with scanning in the hackthebox VPN I discovered, read the Details section below.
 
 At a high-level the script does the following:
 1. Does the standard `nmap -sC -sV <target IP>` scan
@@ -9,7 +9,7 @@ At a high-level the script does the following:
 4. Runs a top 100 ports `nmap -sU --top-ports 100 <target IP>` scan
 5. If there are any UDP ports discovered, the script will run a follow-up `nmap -sU -sC -sV` scan on those ports
 
-For maximum ownage, 
+For maximum ownage, add this entry to your .bashrc file: `alias scouter='python /root/filepath/scouter.py'
 
 
 ## Details and Weird Discoveries
